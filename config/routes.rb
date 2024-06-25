@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # TODO: Remove once infrastructure has been updated to use /up
   get :ping, controller: :heartbeat
 
+  get "/security.txt.html" => redirect("https://vdp.cabinetoffice.gov.uk/.well-known/security.txt")
+  get "/.well-known/security.txt.html" => redirect("https://vdp.cabinetoffice.gov.uk/.well-known/security.txt")
+
   # Defines the root path route ("/")
   root "errors#not_found"
 
